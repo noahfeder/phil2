@@ -5,33 +5,95 @@ body {
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
   background-color: #DDDDDD;
+  color: #CCC;
 }
 
-#root {
-  margin: 10px auto;
+@media only screen and (min-width: 550px) {
+  #root {
+    margin: 10px auto;
+  }
 }
+
 
 nav, .nav-wrapper {
   background-color: transparent;
   box-shadow: none;
-  color: #CCC;
 }
 
 .container.main {
-  border: 4px inset #666;
-  background-image: url("https://hd.unsplash.com/photo-1470299568568-d4e15c4b6472");
+  /* border: 4px solid #666; */
+  box-sizing: border-box;
+  background-image: url("https://hd.unsplash.com/photo-1470928605339-7901da4eddf8");
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-p.home {
-  color: #CCC;
+  background-color: #333;
+  height: calc(100vh - 80px);
 }
 
 .container.footer {
   border: none;
+  position: relative;
 }
 
 .padded {
-  padding: 25px;
+  padding: 25px 25px 0px 25px;
+}
+
+.fullHeight {
+  display: flex;
+  flex-flow: column nowrap;
+  height: calc(100vh - 164px);
+  width: 100%;
+}
+
+.projectsVideoRow {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.projectsVideoWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.projectsVideoWrapper span {
+  display: block;
+  position: relative;
+  height: calc(100% - 20px);
+  width: 100%;
+  margin-top: 20px;
+}
+
+.projectsVideo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#projectsMenuRow {
+  flex: 0 0 50px;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.projectsMenu {
+  text-align: center;
+  background-color: rgba(100,100,100,0.5);
+  height: 50px;
+  border: 1px solid rgba(100,100,100,0.8);
+}
+
+.projectsMenu a {
+  color: inherit;
+  vertical-align: middle;
+  line-height: 50px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
 }
