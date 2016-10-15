@@ -2,17 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 class MenuLinks extends Component {
-  hideMenu() {
-    $('.button-collapse').sideNav('hide');
-  }
 
   render() {
     return (
       <ul id={ this.props.id } className={ this.props.className } >
-        <li><Link onClick={this.hideMenu} to="projects">Projects</Link></li>
-        <li><Link onClick={this.hideMenu} to="bio">Bio</Link></li>
-        <li><Link onClick={this.hideMenu} to="lessons">Lessons</Link></li>
-        <li><Link onClick={this.hideMenu} to="contact">Contact</Link></li>
+        <li><Link className="hideMenu" to="projects">Projects</Link></li>
+        <li><Link className="hideMenu" to="bio">Bio</Link></li>
+        <li><Link className="hideMenu" to="lessons">Lessons</Link></li>
+        <li><Link className="hideMenu" to="contact">Contact</Link></li>
       </ul>
       )
   }
