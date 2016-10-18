@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import YouTube from 'react-youtube';
 
 
@@ -12,14 +14,13 @@ const youtubeUrls = [
   'TFKyEyoCL54',
   '0hdV1ITazOY'
 ];
-//TODO change name to Watch
-//TODO add Listen with SC links and scrips
-//TODO add animation/rotation on click of left and right arrows
-export default class Projects extends Component {
-  componentDidMount() {
-    //set initial state of array of classnames and currentIndex = 0
-    //active states for left and right, w filter classes
-  }
+//2.TODO change name to Watch
+//4.TODO add thumbnail version too
+//3.TODO add Listen with SC links and scrips
+
+//1.TODO add animation/rotation on click of left and right arrows
+class Watch extends Component {
+
   click() {
     //change state via click and rotate classes using https://facebook.github.io/react/docs/animation.html
     //need 7 classes in an array, one per video
@@ -45,3 +46,10 @@ export default class Projects extends Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    current: state.videoPosition.current
+  }
+}
+
+export default connect(mapStateToProps)(Watch)
