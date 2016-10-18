@@ -2,6 +2,18 @@ import React, { Component } from 'react';
 import YouTube from 'react-youtube';
 import { Link } from 'react-router';
 
+
+
+const youtubeUrls = [
+  'c_TEnlMRcCc',
+  'h_iCJ_HBF9M',
+  'UWg-YoBv-do',
+  'tS6yCTIaIyw',
+  'PplH_ogfrZU',
+  'TFKyEyoCL54',
+  '0hdV1ITazOY'
+];
+
 export class Projects extends Component {
   render() {
     return (
