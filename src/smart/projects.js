@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import YouTube from 'react-youtube';
-import { Link } from 'react-router';
 
 
 
@@ -13,52 +12,36 @@ const youtubeUrls = [
   'TFKyEyoCL54',
   '0hdV1ITazOY'
 ];
-
-export class Projects extends Component {
+//TODO change name to Watch
+//TODO add Listen with SC links and scrips
+//TODO add animation/rotation on click of left and right arrows
+export default class Projects extends Component {
+  componentDidMount() {
+    //set initial state of array of classnames and currentIndex = 0
+    //active states for left and right, w filter classes
+  }
+  click() {
+    //change state via click and rotate classes using https://facebook.github.io/react/docs/animation.html
+    //need 7 classes in an array, one per video
+    //checks for if at ind[0] or [6]
+  }
+  videos() {
+    return youtubeUrls.map( el => {
+      return (
+        <div key={ el } className="video col s12">
+          <YouTube videoId={ el } className=""/>
+        </div>
+      )
+    })
+  }
   render() {
     return (
-      <div className="fullHeight">
-        <div className="row" id="projectsMenuRow">
-          <div className="col s4 projectsMenu">
-            <Link to="/projects">One</Link>
-          </div>
-          <div className="col s4 projectsMenu">
-            <Link to="/projects/two">Two</Link>
-          </div>
-          <div className="col s4 projectsMenu">
-            <Link to="/projects/three">Three</Link>
-          </div>
-        </div>
-        <div className="row projectsVideoRow">
-          <div className="col s12 projectsVideoWrapper">
-            { this.props.children }
-          </div>
-        </div>
+      <div className="row videoRow">
+        {this.videos()}
+        <div className="leftArrow controls"></div>
+        <div className="rightArrow controls"></div>
       </div>
     )
   }
 }
 
-export class ProjectsHome extends Component {
-  render() {
-    return (
-      <YouTube className="projectsVideo" videoId={ 'TFKyEyoCL54' } />
-    )
-  }
-}
-
-export class ProjectsTwo extends Component {
-  render() {
-    return (
-      <YouTube className="projectsVideo" videoId={ '0hdV1ITazOY' } />
-    )
-  }
-}
-
-export class ProjectsThree extends Component {
-  render() {
-    return (
-      <YouTube className="projectsVideo" videoId={ 'pQjyTY8klRc' } />
-    )
-  }
-}
