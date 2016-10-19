@@ -55,6 +55,7 @@ nav, .nav-wrapper {
   margin-left: 0%;
   position: relative;
   transition: margin-left 400ms linear;
+  background-color: #000;
 }
 
 .row .col.video {
@@ -141,3 +142,11 @@ nav, .nav-wrapper {
   display: none;
 }
 
+.placeholder {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}

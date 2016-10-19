@@ -21,28 +21,32 @@ class Watch extends Component {
   videos() {
 
     const youtubeUrls = [
-      {id: 'c_TEnlMRcCc', position: 0},
-      {id: 'h_iCJ_HBF9M', position: 1},
-      {id: 'UWg-YoBv-do', position: 2},
-      {id: 'tS6yCTIaIyw', position: 3},
-      {id: 'PplH_ogfrZU', position: 4},
-      {id: 'TFKyEyoCL54', position: 5},
-      {id: '0hdV1ITazOY', position: 6}
+      'c_TEnlMRcCc',
+      'h_iCJ_HBF9M',
+      'UWg-YoBv-do',
+      'tS6yCTIaIyw',
+      'PplH_ogfrZU',
+      'TFKyEyoCL54',
+      '0hdV1ITazOY'
     ];
 
-    let n = -1;
-
-    let youtubes = youtubeUrls.map( el => {
-      n++;
-      let YTGuts = ( n === this.props.current ) ? <YouTube id={ el.id } videoId={ el.id } /> : '';
-        return (
-          <div key={ el.id } className="video col s12">
-            { YTGuts }
-          </div>
-        )
+    return youtubeUrls.map( (videoId,index) => {
+      let videoOrPlaceholder = ( index === this.props.current ) ?
+        <YouTube
+          id={ videoId }
+          videoId={ videoId }
+        /> :
+        <img
+          className="placeholder"
+          src={ `http://img.youtube.com/vi/${videoId}/0.jpg` }
+          alt="placeholder"
+        />;
+      return (
+        <div key={ videoId } className="video col s12">
+          { videoOrPlaceholder }
+        </div>
+      )
     });
-
-    return youtubes;
   }
 
   render() {
