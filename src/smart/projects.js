@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import store from '../index';
 import { goLeft, goRight } from '../actions/index';
 
+import YouTube from 'react-youtube';
 
 //TODO add thumbnail version too
 //TODO add Listen with SC links and scrips
@@ -17,37 +18,31 @@ class Watch extends Component {
     return store.dispatch(goRight(current));
   }
 
-  click() {
-    //change state via click and rotate classes using https://facebook.github.io/react/docs/animation.html
-    //need 7 classes in an array, one per video
-    //checks for if at ind[0] or [6]
-  }
-
   videos() {
 
     const youtubeUrls = [
-      'c_TEnlMRcCc',
-      'h_iCJ_HBF9M',
-      'UWg-YoBv-do',
-      'tS6yCTIaIyw',
-      'PplH_ogfrZU',
-      'TFKyEyoCL54',
-      '0hdV1ITazOY'
+      {id: 'c_TEnlMRcCc', position: 0},
+      {id: 'h_iCJ_HBF9M', position: 1},
+      {id: 'UWg-YoBv-do', position: 2},
+      {id: 'tS6yCTIaIyw', position: 3},
+      {id: 'PplH_ogfrZU', position: 4},
+      {id: 'TFKyEyoCL54', position: 5},
+      {id: '0hdV1ITazOY', position: 6}
     ];
 
+    let n = -1;
+
     let youtubes = youtubeUrls.map( el => {
-      return (
-        <div key={ el } className="video col s12">
-          <span id={ el } className="yt" />
-        </div>
-      )
+      n++;
+      let YTGuts = ( n === this.props.current ) ? <YouTube id={ el.id } videoId={ el.id } /> : '';
+        return (
+          <div key={ el.id } className="video col s12">
+            { YTGuts }
+          </div>
+        )
     });
 
     return youtubes;
-  }
-
-  _pause(e) {
-    e.target.pauseVideo();
   }
 
   render() {
