@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import store from '../index';
+import { goLeft, goRight } from '../actions/index';
+
 import YouTube from 'react-youtube';
 
 
@@ -20,6 +23,15 @@ const youtubeUrls = [
 
 //1.TODO add animation/rotation on click of left and right arrows
 class Watch extends Component {
+  goLeft(current) {
+    console.log('left');
+    return store.dispatch(goLeft(current));
+  }
+
+  goRight(current) {
+    console.log('right');
+    return store.dispatch(goRight(current));
+  }
 
   click() {
     //change state via click and rotate classes using https://facebook.github.io/react/docs/animation.html
@@ -37,10 +49,12 @@ class Watch extends Component {
   }
   render() {
     return (
-      <div className="row videoRow">
-        {this.videos()}
-        <div className="leftArrow controls"></div>
-        <div className="rightArrow controls"></div>
+      <div className="row videoWrapper">
+        <div className={ `row videoRow ${'position' + String(this.props.current)}` }>
+          {this.videos()}
+        </div>
+        <div onClick={ () => this.goLeft(this.props.current) } className="leftArrow controls"></div>
+        <div onClick={ () => this.goRight(this.props.current) } className="rightArrow controls"></div>
       </div>
     )
   }

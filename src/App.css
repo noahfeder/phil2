@@ -40,6 +40,12 @@ nav, .nav-wrapper {
   padding: 25px 25px 0px 25px;
 }
 
+.container .row.videoWrapper {
+  height: 100%;
+  position: relative;
+  margin: 0;
+}
+
 .container .row.videoRow {
   display: flex;
   flex-flow: row nowrap;
@@ -48,6 +54,7 @@ nav, .nav-wrapper {
   height: 75%;
   margin-left: 0%;
   position: relative;
+  transition: margin-left 400ms linear;
 }
 
 .row .col.video {
@@ -71,11 +78,11 @@ nav, .nav-wrapper {
   height: 100%;
 }
 
-.container .row.videoRow .controls {
+.container .row .controls {
   position: absolute;
   top: 0;
   width: 80px;
-  height: 100%;
+  height: 75%;
   background-position: center center;
   background-size: 60px 60px;
   background-repeat: no-repeat;
@@ -83,16 +90,44 @@ nav, .nav-wrapper {
   z-index: 69;
 }
 
-.container .row.videoRow .controls:hover {
+.container .row .controls:hover, .social-container:hover {
   filter: invert(1);
 }
 
-.container .row.videoRow .controls.leftArrow {
+.container .row .controls.leftArrow {
   left: 0;
   background-image: url('./img/arrow_left.png');
 }
 
-.container .row.videoRow .controls.rightArrow {
-  left: calc( 1/7 * 100% - 80px );
+.container .row .controls.rightArrow {
+  right: 0;
   background-image: url('./img/arrow_right.png');
+}
+
+.container .row.videoRow.position0 {
+  margin-left: -0%;
+}
+
+.container .row.videoRow.position1 {
+  margin-left: -100%;
+}
+
+.container .row.videoRow.position2 {
+  margin-left: -200%;
+}
+
+.container .row.videoRow.position3 {
+  margin-left: -300%;
+}
+
+.container .row.videoRow.position4 {
+  margin-left: -400%;
+}
+
+.container .row.videoRow.position5 {
+  margin-left: -500%;
+}
+
+.container .row.videoRow.position6 {
+  margin-left: -600%;
 }

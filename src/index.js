@@ -15,6 +15,7 @@ import Bio from './smart/bio';
 import Contact from './smart/contact';
 
 const store = createStore(RootReducer,applyMiddleware(thunkMiddleware));
+export default store;
 
 ReactDOM.render(
   <Provider store={ store }>

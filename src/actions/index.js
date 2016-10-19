@@ -3,21 +3,23 @@ export const RIGHT = 'RIGHT';
 export const STATIC = 'STATIC';
 
 export function goingLeft(position) {
-  return position !== 0 ? { type: LEFT, current: position-- } : { type: STATIC, current: 0 };
+  let current = (position !== 0) ? position - 1 : 0;
+  return position !== 0 ? { type: LEFT, current: current } : { type: STATIC, current: current };
 }
 
 export function goingRight(position) {
-  return position !== 6 ? { type: RIGHT, current: position++ } : { type: STATIC, current: 6 };
+  let current = (position !== 6) ? position + 1 : 6;
+  return position !== 6 ? { type: RIGHT, current: current } : { type: STATIC, current: current };
 }
 
 export function goLeft(position) {
   return function(dispatch) {
-    dispatch(goingLeft(position));
+    return dispatch(goingLeft(position));
   }
 }
 
 export function goRight(position) {
   return function(dispatch) {
-    dispatch(goingRight(position));
+    return dispatch(goingRight(position));
   }
 }
