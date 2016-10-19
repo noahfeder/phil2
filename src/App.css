@@ -82,7 +82,8 @@ nav, .nav-wrapper {
   position: absolute;
   top: 0;
   width: 80px;
-  height: 75%;
+  height: calc( 75% - 60px );
+  margin-top: 30px;
   background-position: center center;
   background-size: 60px 60px;
   background-repeat: no-repeat;
@@ -108,6 +109,10 @@ nav, .nav-wrapper {
   margin-left: -0%;
 }
 
+.container .row.videoRow.position0 ~ .leftArrow {
+  display: none;
+}
+
 .container .row.videoRow.position1 {
   margin-left: -100%;
 }
@@ -130,4 +135,8 @@ nav, .nav-wrapper {
 
 .container .row.videoRow.position6 {
   margin-left: -600%;
+}
+
+.container .row.videoRow.position6 ~ .rightArrow {
+  display: none;
 }

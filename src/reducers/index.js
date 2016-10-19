@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { LEFT, RIGHT } from '../actions/index';
+
 function videoPosition(state = {
   current: 0
 }, action) {

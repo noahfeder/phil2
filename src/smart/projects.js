@@ -4,32 +4,16 @@ import { connect } from 'react-redux';
 import store from '../index';
 import { goLeft, goRight } from '../actions/index';
 
-import YouTube from 'react-youtube';
 
+//TODO add thumbnail version too
+//TODO add Listen with SC links and scrips
 
-
-const youtubeUrls = [
-  'c_TEnlMRcCc',
-  'h_iCJ_HBF9M',
-  'UWg-YoBv-do',
-  'tS6yCTIaIyw',
-  'PplH_ogfrZU',
-  'TFKyEyoCL54',
-  '0hdV1ITazOY'
-];
-//2.TODO change name to Watch
-//4.TODO add thumbnail version too
-//3.TODO add Listen with SC links and scrips
-
-//1.TODO add animation/rotation on click of left and right arrows
 class Watch extends Component {
   goLeft(current) {
-    console.log('left');
     return store.dispatch(goLeft(current));
   }
 
   goRight(current) {
-    console.log('right');
     return store.dispatch(goRight(current));
   }
 
@@ -38,19 +22,38 @@ class Watch extends Component {
     //need 7 classes in an array, one per video
     //checks for if at ind[0] or [6]
   }
+
   videos() {
-    return youtubeUrls.map( el => {
+
+    const youtubeUrls = [
+      'c_TEnlMRcCc',
+      'h_iCJ_HBF9M',
+      'UWg-YoBv-do',
+      'tS6yCTIaIyw',
+      'PplH_ogfrZU',
+      'TFKyEyoCL54',
+      '0hdV1ITazOY'
+    ];
+
+    let youtubes = youtubeUrls.map( el => {
       return (
         <div key={ el } className="video col s12">
-          <YouTube videoId={ el } className=""/>
+          <span id={ el } className="yt" />
         </div>
       )
-    })
+    });
+
+    return youtubes;
   }
+
+  _pause(e) {
+    e.target.pauseVideo();
+  }
+
   render() {
     return (
       <div className="row videoWrapper">
-        <div className={ `row videoRow ${'position' + String(this.props.current)}` }>
+        <div className={ `row videoRow position${this.props.current}` }>
           {this.videos()}
         </div>
         <div onClick={ () => this.goLeft(this.props.current) } className="leftArrow controls"></div>
