@@ -19,7 +19,7 @@ nav, .nav-wrapper {
 
 .container .row.home {
   height: 100%;
-  background-image: url("/img/phil0.jpg");
+  background-image: url("/build/img/phil0.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -152,17 +152,15 @@ img.home.circle {
 }
 
 .row.videoGrid .gridItem .x {
-  font-size: 24px;
+  font-size: 2rem;
   text-align: center;
-  color: #d00;
-  background-color: #eee;
-  width: 28px;
-  height: 28px;
+  color: #f00;
+  width: 2rem;
+  height: 2rem;
   position: absolute;
   top: 5px;
   right: 20px;
-  border-radius: 50%;
-  line-height: 28px;
+  line-height: 2rem;
   cursor: pointer;
 }
 

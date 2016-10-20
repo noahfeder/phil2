@@ -2,6 +2,7 @@
   "name": "phil2",
   "version": "0.2.0",
   "private": true,
+  "homepage": "/build",
   "devDependencies": {
     "react-scripts": "0.6.1"
   },

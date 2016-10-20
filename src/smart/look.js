@@ -23,7 +23,7 @@ class Look extends Component {
       }
       arr.push(
         <div className="col s12 look" key={ i }>
-          <img src={ `/img/phil${i}.jpg` } alt={ `phil ${i}`} className={ portrait } />
+          <img src={ `/build/img/phil${i}.jpg` } alt={ `phil ${i}`} className={ portrait } />
         </div>
         )
     }

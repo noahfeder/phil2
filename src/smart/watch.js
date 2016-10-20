@@ -62,8 +62,8 @@ class Watch extends Component {
           onClick={ () => this.expand(index) }
         />;
       let button = active ?
-        <div className='x' onClick={ this.reset }>
-          X
+        <div onClick={ this.reset } className="x">
+          <i className="small material-icons">highlight_off</i>
         </div> :
         <div className="playButton" onClick={ () => this.expand(index) }>
         </div>;
