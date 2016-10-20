@@ -1,13 +1,24 @@
 import { combineReducers } from 'redux';
-import { LEFT, RIGHT, RESET, EXPAND } from '../actions/index';
+import { LEFT, RIGHT, RESET, EXPAND, PLAY, PAUSE } from '../actions/index';
 
 function videoPosition(state = {
-  current: 0
+  current: 0,
+  playing: false
 }, action) {
   switch (action.type) {
     case LEFT: case RIGHT: {
       return Object.assign({}, state, {
         current: action.current
+      })
+    }
+    case PLAY: {
+      return Object.assign({}, state, {
+        playing: true
+      })
+    }
+    case PAUSE: {
+      return Object.assign({}, state, {
+        playing: false
       })
     }
     default:

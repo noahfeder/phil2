@@ -5,6 +5,8 @@
 export const LEFT = 'LEFT';
 export const RIGHT = 'RIGHT';
 export const STATIC = 'STATIC';
+export const PLAY = 'PLAY';
+export const PAUSE = 'PAUSE';
 
 export function goingLeft(position) {
   let current = (position !== 0) ? position - 1 : 0;
@@ -25,6 +27,23 @@ export function goLeft(position) {
 export function goRight(position) {
   return function(dispatch) {
     return dispatch(goingRight(position));
+  }
+}
+
+export function pause() {
+  return function(dispatch) {
+    return dispatch({
+      type: PAUSE
+    })
+  }
+}
+
+
+export function play() {
+  return function(dispatch) {
+    return dispatch({
+      type: PLAY
+    })
   }
 }
 

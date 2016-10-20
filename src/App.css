@@ -94,6 +94,7 @@ nav, .nav-wrapper {
   background-repeat: no-repeat;
   cursor: pointer;
   z-index: 69;
+  transition: left 300ms linear, right 300ms linear;
 }
 
 .container .row .controls:hover, .social-container:hover {
@@ -105,9 +106,17 @@ nav, .nav-wrapper {
   background-image: url('./img/arrow_left.png');
 }
 
+.container .row .controls.leftArrow.play {
+  left: -80px;
+}
+
 .container .row .controls.rightArrow {
   right: 0;
   background-image: url('./img/arrow_right.png');
+}
+
+.container .row .controls.rightArrow.play {
+  right:  -80px;
 }
 
 .container .row.videoRow.position0 {

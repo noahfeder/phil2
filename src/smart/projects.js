@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import store from '../index';
-import { goLeft, goRight } from '../actions/index';
+import { goLeft, goRight, play, pause } from '../actions/index';
 
 import YouTube from 'react-youtube';
 
@@ -16,6 +16,14 @@ class Watch extends Component {
 
   goRight(current) {
     return store.dispatch(goRight(current));
+  }
+
+  play() {
+    return store.dispatch(play());
+  }
+
+  pause() {
+    return store.dispatch(pause());
   }
 
   videos() {
@@ -35,6 +43,8 @@ class Watch extends Component {
         <YouTube
           id={ videoId }
           videoId={ videoId }
+          onPlay={ this.play }
+          onPause={ this.pause }
         /> :
         <img
           className="placeholder"
@@ -50,13 +60,14 @@ class Watch extends Component {
   }
 
   render() {
+    let playing = (this.props.playing) ? 'play' : 'pause';
     return (
       <div className="row videoWrapper">
         <div className={ `row videoRow position${this.props.current}` }>
           {this.videos()}
         </div>
-        <div onClick={ () => this.goLeft(this.props.current) } className="leftArrow controls"></div>
-        <div onClick={ () => this.goRight(this.props.current) } className="rightArrow controls"></div>
+        <div onClick={ () => this.goLeft(this.props.current) } className={ `leftArrow controls ${playing}` }></div>
+        <div onClick={ () => this.goRight(this.props.current) } className={ `rightArrow controls ${playing}` }></div>
       </div>
     )
   }
@@ -64,7 +75,8 @@ class Watch extends Component {
 
 function mapStateToProps(state) {
   return {
-    current: state.videoPosition.current
+    current: state.videoPosition.current,
+    playing: state.videoPosition.playing
   }
 }
 
