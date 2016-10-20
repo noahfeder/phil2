@@ -132,9 +132,8 @@ img.home.circle {
 /* GRID STUFF */
 
 .row.videoGrid {
-  overflow: auto;
   position: relative;
-  height: calc(100% - 80px);
+  margin-bottom: 0;
 }
 
 .row.videoGrid .gridItem {
