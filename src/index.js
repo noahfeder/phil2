@@ -13,6 +13,7 @@ import Watch from './smart/projects';
 import Lessons from './smart/lessons';
 import Bio from './smart/bio';
 import Contact from './smart/contact';
+import Grid from './smart/grid';
 
 const store = createStore(RootReducer,applyMiddleware(thunkMiddleware));
 export default store;
@@ -23,6 +24,7 @@ ReactDOM.render(
       <Route path="/" component={ App }>
         <IndexRoute component={ Home } />
         <Route path="watch" component={ Watch } />
+        <Route path="grid" component={ Grid } />
         <Route path="bio" component={ Bio } />
         <Route path="contact" component={ Contact } />
         <Route path="lessons" component={ Lessons } />

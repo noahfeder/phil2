@@ -1,3 +1,7 @@
+/*
+*  Actions for carousel YouTube display
+*/
+
 export const LEFT = 'LEFT';
 export const RIGHT = 'RIGHT';
 export const STATIC = 'STATIC';
@@ -21,5 +25,38 @@ export function goLeft(position) {
 export function goRight(position) {
   return function(dispatch) {
     return dispatch(goingRight(position));
+  }
+}
+
+/*
+* Actions for grid display
+*/
+
+export const RESET = 'RESET';
+export const EXPAND = 'EXPAND';
+
+export function resetting() {
+  return {
+    type: EXPAND
+  }
+}
+
+export function reset() {
+  return function(dispatch) {
+    return dispatch(resetting());
+  };
+}
+
+export function expanding(num) {
+  return {
+    type: EXPAND,
+    num: num
+  };
+}
+
+export function expand(num) {
+  return function(dispatch) {
+    dispatch(reset());
+    return dispatch(expanding(num));
   }
 }
