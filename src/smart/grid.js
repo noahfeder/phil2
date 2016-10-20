@@ -51,6 +51,7 @@ class Grid extends Component {
         <YouTube
           id={ videoId }
           videoId={ videoId }
+          opts={ { playerVars: {autoplay: 1} } }
           className="placeholder"
         /> :
         <img
@@ -59,9 +60,16 @@ class Grid extends Component {
           alt="placeholder"
           onClick={ () => this.expand(index) }
         />;
+      let button = active ?
+        <div className='x' onClick={ this.reset }>
+          X
+        </div> :
+        <div className="playButton" onClick={ () => this.expand(index) }>
+        </div>;
       return (
         <div key={ videoId } className={ `col s12 m4 gridItem ${ active ? 'active' : '' }` }>
           { videoOrPlaceholder }
+          { button }
         </div>
       )
     });

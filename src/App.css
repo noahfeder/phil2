@@ -8,27 +8,28 @@ body {
   color: #CCC;
 }
 
-@media only screen and (min-width: 550px) {
-  #root {
-    margin: 10px auto;
-  }
-}
-
-
 nav, .nav-wrapper {
   background-color: transparent;
   box-shadow: none;
 }
 
 .container.main {
-  /* border: 4px solid #666; */
   box-sizing: border-box;
   background-image: url("https://hd.unsplash.com/photo-1470928605339-7901da4eddf8");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #333;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 46px);
   overflow: hidden;
+}
+
+@media only screen and (min-width: 601px) {
+  #root {
+    margin: 10px auto;
+  }
+  .container.main {
+    height:  calc(100vh - 56px);
+  }
 }
 
 .container.footer {
@@ -164,7 +165,23 @@ nav, .nav-wrapper {
 }
 
 .row.videoGrid .gridItem {
+  cursor: pointer;
+  position: relative;
+}
 
+.row.videoGrid .gridItem .x {
+  font-size: 24px;
+  text-align: center;
+  color: #d00;
+  background-color: #eee;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  border-radius: 50%;
+  line-height: 28px;
+  cursor: pointer;
 }
 
 .row.videoGrid .gridItem.active {
@@ -174,8 +191,24 @@ nav, .nav-wrapper {
   max-height: 100%;
   display: block;
   position: absolute;
+  z-index: 10;
 }
 
-iframe.placeholder {
+.playButton {
+  position: absolute;
+  width: 60px;
+  height: 42px;
+  left: calc(50% - 30px);
+  top: calc(50% - 21px);
+  cursor: pointer;
+  background-image: url('./img/playdark.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  -webkit-transition: background 200ms;
+  transition: background 200ms;
+}
 
+.playButton:hover {
+  background-image:  url('./img/playred.png');
 }
