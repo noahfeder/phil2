@@ -9,11 +9,10 @@ import App from './App';
 import './index.css';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import Home from './smart/home';
-import Watch from './smart/projects';
 import Lessons from './smart/lessons';
 import Bio from './smart/bio';
 import Contact from './smart/contact';
-import Grid from './smart/grid';
+import Watch from './smart/watch';
 import Look from './smart/look';
 import Listen from './smart/listen';
 
@@ -26,7 +25,6 @@ ReactDOM.render(
       <Route path="/" component={ App }>
         <IndexRoute component={ Home } />
         <Route path="watch" component={ Watch } />
-        <Route path="grid" component={ Grid } />
         <Route path="bio" component={ Bio } />
         <Route path="look" component={ Look } />
         <Route path="listen" component={ Listen } />

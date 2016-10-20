@@ -71,7 +71,7 @@ function videoGrid(state = {
 }
 
 function imagePosition(state = {
-  current: 0
+  current: 5
 }, action) {
   switch (action.type) {
     case IMG_LEFT: case IMG_RIGHT: {

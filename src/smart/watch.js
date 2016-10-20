@@ -6,7 +6,7 @@ import { reset, expand } from '../actions/index';
 
 import YouTube from 'react-youtube';
 
-class Grid extends Component {
+class Watch extends Component {
   componentWillMount() {
     this.reset()
   }
@@ -42,7 +42,8 @@ class Grid extends Component {
       'tS6yCTIaIyw',
       'PplH_ogfrZU',
       'TFKyEyoCL54',
-      '0hdV1ITazOY'
+      '0hdV1ITazOY',
+      '2Z5MJpw4gvE'
     ];
 
     return youtubeUrls.map( (videoId, index) => {
@@ -56,7 +57,7 @@ class Grid extends Component {
         /> :
         <img
           className="placeholder"
-          src={ `http://img.youtube.com/vi/${videoId}/0.jpg` }
+          src={ `http://img.youtube.com/vi/${videoId}/mqdefault.jpg` }
           alt="placeholder"
           onClick={ () => this.expand(index) }
         />;
@@ -77,7 +78,7 @@ class Grid extends Component {
 
   render() {
     return (
-        <div className='row videoGrid'>
+        <div className='row videoGrid innerScroll'>
           {this.videos()}
         </div>
     )
@@ -90,4 +91,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(Grid)
+export default connect(mapStateToProps)(Watch)

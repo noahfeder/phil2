@@ -40,7 +40,7 @@ export default class Listen extends Component {
 
   render() {
     return (
-      <div className="row listen">
+      <div className="row listen innerScroll">
         <div className="col s12">
           { this.embedRows() }
         </div>

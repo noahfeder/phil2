@@ -33,8 +33,8 @@ class Look extends Component {
     let leftClass = this.props.current === 0 ? 'hide' : '';
     let rightClass = this.props.current === 11 ? 'hide' : '';
     return (
-      <div className="row videoWrapper imageWrapper">
-        <div className="row videoRow imageRow" style={ {
+      <div className="row imageWrapper">
+        <div className="row imageRow" style={ {
           marginLeft: `${this.props.current * -100}%`
         } }>
           {this.images()}
