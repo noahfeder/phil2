@@ -64,7 +64,7 @@ class Watch extends Component {
     return (
       <div className="row videoWrapper">
         <div className={ `row videoRow position${this.props.current}` }>
-          {this.videos()}
+          { this.videos() }
         </div>
         <div onClick={ () => this.goLeft(this.props.current) } className={ `leftArrow controls ${playing}` }></div>
         <div onClick={ () => this.goRight(this.props.current) } className={ `rightArrow controls ${playing}` }></div>

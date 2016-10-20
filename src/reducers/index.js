@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
-import { LEFT, RIGHT, RESET, EXPAND, PLAY, PAUSE } from '../actions/index';
+import { LEFT, RIGHT,
+  RESET, EXPAND, PLAY, PAUSE,
+  IMG_LEFT, IMG_RIGHT } from '../actions/index';
 
 function videoPosition(state = {
   current: 0,
@@ -68,9 +70,23 @@ function videoGrid(state = {
   }
 }
 
+function imagePosition(state = {
+  current: 0
+}, action) {
+  switch (action.type) {
+    case IMG_LEFT: case IMG_RIGHT: {
+      return Object.assign({}, state, {
+        current: action.position
+      })
+    }
+    default:
+      return state;
+  }
+}
 const RootReducer = combineReducers({
   videoPosition,
-  videoGrid
+  videoGrid,
+  imagePosition
 });
 
 export default RootReducer;

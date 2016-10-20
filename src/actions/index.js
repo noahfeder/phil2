@@ -79,3 +79,31 @@ export function expand(num) {
     return dispatch(expanding(num));
   }
 }
+
+/*
+* IMAGE CAROUSEL
+*/
+
+export const IMG_LEFT = 'IMG_LEFT';
+export const IMG_RIGHT = 'IMG_RIGHT';
+const IMG_MAX = 11;
+
+export function imgLeft(position) {
+  return function(dispatch) {
+    let current = (position !== 0) ? position - 1 : 0;
+    return dispatch({
+      type: IMG_LEFT,
+      position: current
+    })
+  }
+}
+
+export function imgRight(position) {
+  return function(dispatch) {
+    let current = (position !== IMG_MAX) ? position + 1 : IMG_MAX;
+    return dispatch({
+      type: IMG_RIGHT,
+      position: current
+    })
+  }
+}

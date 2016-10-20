@@ -8,6 +8,8 @@ class MenuLinks extends Component {
       <ul id={ this.props.id } className={ this.props.className } >
         <li><Link className="hideMenu" to="watch">Watch(A)</Link></li>
         <li><Link className="hideMenu" to="grid">Watch(B)</Link></li>
+        <li><Link className="hideMenu" to="look">Look</Link></li>
+        <li><Link className="hideMenu" to="listen">Listen</Link></li>
         <li><Link className="hideMenu" to="bio">Bio</Link></li>
         <li><Link className="hideMenu" to="lessons">Lessons</Link></li>
         <li><Link className="hideMenu" to="contact">Contact</Link></li>
