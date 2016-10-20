@@ -17,10 +17,6 @@ nav, .nav-wrapper {
   box-shadow: none;
 }
 
-a.left.button-collapse {
-  padding-top: 5px;
-}
-
 .container .row.home {
   height: 100%;
   background-image: url("/img/phil0.jpg");
@@ -150,7 +146,8 @@ img.home.circle {
   max-width: 100%;
   max-height: 100%;
   width: 100%;
-  height: auto;
+  height: 100%;
+  min-height: 150px;
   display: block;
 }
 
@@ -169,13 +166,12 @@ img.home.circle {
   cursor: pointer;
 }
 
-.row.videoGrid .gridItem.active {
+.row.videoGrid .gridItem.active span {
   width: 100%;
   height: 100%;
   max-width: 100%;
   max-height: 100%;
   display: block;
-  position: absolute;
   z-index: 10;
 }
 
