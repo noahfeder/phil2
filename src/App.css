@@ -3,7 +3,6 @@ body {
   padding: 0;
   border: 0;
   box-sizing: border-box;
-  font-family: Helvetica, Arial, sans-serif;
   background-color: #DDDDDD;
   color: hsl(30, 70%, 90%);
   font-weight: 200;
@@ -17,12 +16,12 @@ nav, .nav-wrapper {
   box-shadow: none;
 }
 
-.container .row.home {
-  height: 100%;
-  background-image: url("/build/img/phil0.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+.left.button-collapse {
+  margin-left: 10px;
+}
+
+.container {
+  font-family: 'Quattrocento Sans', sans-serif;
 }
 
 .container.main {
@@ -43,23 +42,12 @@ nav, .nav-wrapper {
 
 .innerScroll {
   overflow: auto;
-  height: 100%;
-}
-
-p.home.right-align {
-  text-align: center;
-}
-
-img.home.circle {
-  max-height: 150px;
-  margin: 0 auto;
-  display: block;
+  height: calc(100% - 56px);
 }
 
 /* WATCH CAROUSEL */
 
 .container .row.imageWrapper {
-  height: 87%;
   position: relative;
   margin: 0;
 }
@@ -139,6 +127,7 @@ img.home.circle {
 .row.videoGrid .gridItem {
   position: relative;
   padding-bottom: 10px;
+  height: 300px;
 }
 
 .row.videoGrid .gridItem .placeholder {
@@ -146,7 +135,7 @@ img.home.circle {
   max-height: 100%;
   width: 100%;
   height: 100%;
-  min-height: 150px;
+  min-height: 100%;
   display: block;
 }
 
@@ -168,6 +157,7 @@ img.home.circle {
   height: 100%;
   max-width: 100%;
   max-height: 100%;
+  min-height: 100%;
   display: block;
   z-index: 10;
 }
@@ -191,6 +181,13 @@ img.home.circle {
   background-image:  url('./img/playred.png');
 }
 
+/* SOUND PLAYER */
+
+.row .col.soundPlayer iframe {
+  max-height: 120px;
+  height: 120px;
+  width: 100%;
+}
 
 /* MEDIA QUERIES */
 
@@ -198,14 +195,17 @@ img.home.circle {
   #root {
     margin: 10px auto;
   }
+
   .container.main {
     height:  calc(100vh - 56px);
   }
-  p.home.right-align {
-    text-align: center;
+
+  .row.videoGrid .gridItem {
+    height: 242px;
   }
-  img.home.circle {
-    max-height: 100%;
+
+  .innerScroll {
+    height: calc(100% - 64px);
   }
 }
 
@@ -214,5 +214,11 @@ img.home.circle {
     flex: 1;
     height: 100%;
     width: auto;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .row.videoGrid .gridItem {
+    height: 150px;
   }
 }

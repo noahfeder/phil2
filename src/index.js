@@ -8,7 +8,6 @@ import RootReducer from './reducers/index';
 import App from './App';
 import './index.css';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import Home from './smart/home';
 import Lessons from './smart/lessons';
 import Bio from './smart/bio';
 import Contact from './smart/contact';
@@ -23,10 +22,9 @@ ReactDOM.render(
   <Provider store={ store }>
     <Router history={ browserHistory }>
       <Route path="/" component={ App }>
-        <IndexRoute component={ Home } />
+        <IndexRoute component={ Look } />
         <Route path="watch" component={ Watch } />
         <Route path="bio" component={ Bio } />
-        <Route path="look" component={ Look } />
         <Route path="listen" component={ Listen } />
         <Route path="contact" component={ Contact } />
         <Route path="lessons" component={ Lessons } />

@@ -1,30 +1,69 @@
 import React, { Component } from 'react';
-
+import YouTube from 'react-youtube';
 export default class Listen extends Component {
+
+  differentPlayers(obj) {
+    switch(obj.type) {
+      case 'soundcloud':
+        return (
+          <iframe
+            scrolling="no"
+            frameBorder="no"
+            src={
+              `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${ obj.id }&amp;color=ff5500&amp;inverse=true&amp;auto_play=false&amp;show_user=true`
+            }
+          />
+        );
+      case 'bandcamp':
+        return (
+          <iframe
+            src={
+              `https://bandcamp.com/EmbeddedPlayer/album=${obj.id}/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/`
+            }
+            seamless
+            frameBorder="0"
+          />
+        );
+      case 'spotify':
+        return (
+          <iframe
+            src={`https://embed.spotify.com/?uri=spotify%3Atrack%3A${obj.id}`}
+            frameBorder="0"
+            allowTransparency="true"
+          />
+        );
+      case 'youtube':
+        return (
+          <YouTube videoId={ obj.id } />
+        );
+      default:
+       return '';
+    }
+  }
 
   embedRows() {
 
     const ids = [
-      { id: '141217511', description: "one" },
-      { id: '187185499', description: "two" },
-      { id: '187185514', description: "four" },
-      { id: '187185511', description: "three" },
-      { id: '187185508', description: "three" }
+      { id: '248449814', description: 'Producer', type: 'soundcloud' },
+      { id: '248449820', description: 'Producer', type: 'soundcloud' },
+      { id: '1762490030', description: 'Producer, Engineer, Guitar', type: 'bandcamp' },
+      { id: '4HEQVUiWUEso99vH4jDChk', description: 'Keyboards', type: 'spotify' },
+      { id: '1547477381', description: 'Piano', type: 'bandcamp' },
+      { id: '238854917', description: 'Keyboards', type: 'soundcloud' },
+      { id: '5jNykolgh8kaC2yqyzVM0E', description: 'Saxophone, Bass', type: 'spotify' },
+      { id: '155015181', description: 'Piano', type: 'soundcloud' },
+      { id: 'ykh0uvffMvI', description: 'B3 Organ', type: 'youtube' },
+      { id: '154963835', description: 'Piano', type: 'soundcloud' },
+      { id: '187185499', description: 'Guitar, Vocals, Producer', type: 'soundcloud' },
+      { id: '187185511', description: 'Guitar, Vocals, Producer', type: 'soundcloud' },
+      { id: '59398313', description: 'Piano', type: 'soundcloud' }
     ];
 
     return ids.map( (el,ind) => {
       return (
         <div className="row" key={ el.id }>
-          <div className="col s12 m6">
-            <iframe
-              width="100%"
-              height="60"
-              scrolling="no"
-              frameBorder="no"
-              src={
-                `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${ el.id }&amp;color=ff5500&amp;inverse=true&amp;auto_play=false&amp;show_user=true`
-              }
-            />
+          <div className="col s12 m6 soundPlayer">
+            { this.differentPlayers(el) }
           </div>
           <div className="col s12 m6">
             <p>

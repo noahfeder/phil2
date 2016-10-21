@@ -10,7 +10,7 @@ class App extends Component {
       <div>
         <div className="container main">
           <Header />
-          {this.props.children}
+          { this.props.children }
         </div>
         <Footer />
       </div>

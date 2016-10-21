@@ -6,6 +6,19 @@ import { reset, expand } from '../actions/index';
 
 import YouTube from 'react-youtube';
 
+const youtubeUrls = [
+  'c_TEnlMRcCc',
+  'h_iCJ_HBF9M',
+  'UWg-YoBv-do',
+  'tS6yCTIaIyw',
+  'PplH_ogfrZU',
+  'TFKyEyoCL54',
+  '0hdV1ITazOY',
+  '2Z5MJpw4gvE'
+];
+
+export const VIDEOS_MAX = youtubeUrls.length;
+
 class Watch extends Component {
   componentWillMount() {
     this.reset()
@@ -35,17 +48,6 @@ class Watch extends Component {
 
   videos() {
 
-    const youtubeUrls = [
-      'c_TEnlMRcCc',
-      'h_iCJ_HBF9M',
-      'UWg-YoBv-do',
-      'tS6yCTIaIyw',
-      'PplH_ogfrZU',
-      'TFKyEyoCL54',
-      '0hdV1ITazOY',
-      '2Z5MJpw4gvE'
-    ];
-
     return youtubeUrls.map( (videoId, index) => {
       let active = this.props.grid[`position${index}`];
       let videoOrPlaceholder = ( active ) ?
@@ -68,7 +70,7 @@ class Watch extends Component {
         <div className="playButton" onClick={ () => this.expand(index) }>
         </div>;
       return (
-        <div key={ videoId } className={ `col s12 m4 gridItem ${ active ? 'active' : '' }` }>
+        <div key={ videoId } className={ `col s12 m6 l4 gridItem ${ active ? 'active' : '' }` }>
           { videoOrPlaceholder }
           { button }
         </div>

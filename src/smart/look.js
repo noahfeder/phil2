@@ -23,7 +23,7 @@ class Look extends Component {
       }
       arr.push(
         <div className="col s12 look" key={ i }>
-          <img src={ `/build/img/phil${i}.jpg` } alt={ `phil ${i}`} className={ portrait } />
+          <img src={ `img/phil${i}.jpg` } alt={ `phil ${i}`} className={ portrait } />
         </div>
         )
     }
@@ -33,7 +33,7 @@ class Look extends Component {
     let leftClass = this.props.current === 0 ? 'hide' : '';
     let rightClass = this.props.current === 11 ? 'hide' : '';
     return (
-      <div className="row imageWrapper">
+      <div className="row imageWrapper innerScroll">
         <div className="row imageRow" style={ {
           marginLeft: `${this.props.current * -100}%`
         } }>
