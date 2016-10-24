@@ -8,7 +8,7 @@ import {
   PLAY,
   PAUSE,
   IMG_LEFT,
-  IMG_RIGHT
+  IMG_RIGHT,
 } from '../actions/index';
 
 import { VIDEOS_MAX } from '../smart/watch';
@@ -19,17 +19,17 @@ function videoPosition(state = {
 }, action) {
   switch (action.type) {
     case LEFT: case RIGHT:
-      return { ...state, current: action.current };
+      return { ...state, current: action.current, };
     case PLAY:
-      return { ...state, playing: true };
+      return { ...state, playing: true, };
     case PAUSE:
-      return { ...state, playing: false };
+      return { ...state, playing: false, };
     default:
       return state;
   }
 }
 
-function videoGrid(state = { reset: true }, action) {
+function videoGrid(state = { reset: true, }, action) {
   const newState = {};
   for (let i = 0; i < VIDEOS_MAX; i++) {
     newState[`position${i}`] = false;
@@ -48,11 +48,13 @@ function videoGrid(state = { reset: true }, action) {
 }
 
 function imagePosition(state = {
-  current: 0
+  current: 0,
+  position0: true,
+  position1: true,
 }, action) {
   switch (action.type) {
     case IMG_LEFT: case IMG_RIGHT:
-      return { ...state,  current: action.position };
+      return { ...state,  current: action.position, [`position${action.position}`]: true };
     default:
       return state;
   }
@@ -60,7 +62,7 @@ function imagePosition(state = {
 const RootReducer = combineReducers({
   videoPosition,
   videoGrid,
-  imagePosition
+  imagePosition,
 });
 
 export default RootReducer;

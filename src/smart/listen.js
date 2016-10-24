@@ -10,7 +10,7 @@ export default class Listen extends Component {
             scrolling="no"
             frameBorder="no"
             src={
-              `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${ obj.id }&amp;color=000000&amp;inverse=false&amp;auto_play=false&amp;show_user=true&amp;show_artwork=false&amp;show_comments=false`
+              `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${obj.id}&amp;color=000000&amp;inverse=false&amp;auto_play=false&amp;show_user=true&amp;show_artwork=false&amp;show_comments=false`
             }
           />
         );

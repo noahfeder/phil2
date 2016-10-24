@@ -127,7 +127,7 @@ nav, .nav-wrapper {
 .row.videoGrid .gridItem {
   position: relative;
   padding-bottom: 10px;
-  height: 300px;
+  height: auto;
 }
 
 .row.videoGrid .gridItem .placeholder {
@@ -160,6 +160,10 @@ nav, .nav-wrapper {
   min-height: 100%;
   display: block;
   z-index: 10;
+}
+
+.row.videoGrid .gridItem.active span iframe {
+  min-width: 100%;
 }
 
 .playButton {
@@ -201,6 +205,10 @@ nav, .nav-wrapper {
   text-align: justify;
 }
 
+
+img {
+  filter: saturate(0);
+}
 /* MEDIA QUERIES */
 
 @media only screen and (min-width: 601px) {
@@ -213,7 +221,8 @@ nav, .nav-wrapper {
   }
 
   .row.videoGrid .gridItem {
-    height: 242px;
+    min-height: 148px;
+    max-height: 231px;
   }
 
   .innerScroll {
@@ -236,6 +245,6 @@ nav, .nav-wrapper {
 
 @media only screen and (min-width: 992px) {
   .row.videoGrid .gridItem {
-    height: 150px;
+    /* height: 150px; */
   }
 }
