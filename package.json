@@ -2,7 +2,7 @@
   "name": "phil2",
   "version": "0.2.0",
   "private": true,
-  "homepage": "http://phil2.millenialsears.com/build",
+  "homepage": "http://phil2.millenialsears.com/",
   "devDependencies": {
     "react-scripts": "0.6.1"
   },
