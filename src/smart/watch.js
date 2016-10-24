@@ -55,7 +55,6 @@ class Watch extends Component {
           id={ videoId }
           videoId={ videoId }
           opts={ { playerVars: {autoplay: 1} } }
-          className="placeholder"
         /> :
         <img
           className="placeholder"
@@ -70,7 +69,7 @@ class Watch extends Component {
         <div className="playButton" onClick={ () => this.expand(index) }>
         </div>;
       return (
-        <div key={ videoId } className={ `col s12 m6 l4 gridItem ${ active ? 'active' : '' }` }>
+        <div key={ videoId } className={ `gridItem ${ active ? 'active' : '' }` }>
           { videoOrPlaceholder }
           { button }
         </div>
@@ -80,7 +79,7 @@ class Watch extends Component {
 
   render() {
     return (
-        <div className='row videoGrid innerScroll'>
+        <div className='videoGrid innerScroll'>
           {this.videos()}
         </div>
     )

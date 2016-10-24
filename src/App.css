@@ -119,27 +119,36 @@ nav, .nav-wrapper {
 
 /* GRID STUFF */
 
-.row.videoGrid {
+.videoGrid {
   position: relative;
-  margin-bottom: 0;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  margin: 0;
 }
 
-.row.videoGrid .gridItem {
+.videoGrid .gridItem {
   position: relative;
-  padding-bottom: 10px;
+  padding: 0px 5px 10px 5px;
   height: auto;
+  flex: 1 0 100%;
+  box-sizing: border-box;
 }
 
-.row.videoGrid .gridItem .placeholder {
-  max-width: 100%;
-  max-height: 100%;
+.videoGrid .gridItem span, .videoGrid .gridItem iframe {
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.videoGrid .gridItem .placeholder {
   width: 100%;
   height: 100%;
-  min-height: 100%;
   display: block;
 }
 
-.row.videoGrid .gridItem .x {
+.videoGrid .gridItem .x {
   font-size: 2rem;
   text-align: center;
   color: #f00;
@@ -147,24 +156,11 @@ nav, .nav-wrapper {
   height: 2rem;
   position: absolute;
   top: 5px;
-  right: 20px;
+  right: 10px;
   line-height: 2rem;
   cursor: pointer;
 }
 
-.row.videoGrid .gridItem.active span {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  min-height: 100%;
-  display: block;
-  z-index: 10;
-}
-
-.row.videoGrid .gridItem.active span iframe {
-  min-width: 100%;
-}
 
 .playButton {
   position: absolute;
@@ -220,11 +216,6 @@ img {
     height:  calc(100vh - 56px);
   }
 
-  .row.videoGrid .gridItem {
-    min-height: 148px;
-    max-height: 231px;
-  }
-
   .innerScroll {
     height: calc(100% - 64px);
   }
@@ -232,6 +223,10 @@ img {
   .row .col.soundDescription {
     font-size: 1.5rem;
     text-align: left;
+  }
+
+  .videoGrid .gridItem {
+    flex-basis: 50%;
   }
 }
 
@@ -244,7 +239,7 @@ img {
 }
 
 @media only screen and (min-width: 992px) {
-  .row.videoGrid .gridItem {
-    /* height: 150px; */
+  .videoGrid .gridItem {
+    flex-basis: 33%;
   }
 }
