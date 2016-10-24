@@ -10,7 +10,7 @@ export default class Listen extends Component {
             scrolling="no"
             frameBorder="no"
             src={
-              `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${ obj.id }&amp;color=ff5500&amp;inverse=true&amp;auto_play=false&amp;show_user=true`
+              `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${ obj.id }&amp;color=000000&amp;inverse=false&amp;auto_play=false&amp;show_user=true&amp;show_artwork=false&amp;show_comments=false`
             }
           />
         );
@@ -18,7 +18,7 @@ export default class Listen extends Component {
         return (
           <iframe
             src={
-              `https://bandcamp.com/EmbeddedPlayer/album=${obj.id}/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/`
+              `https://bandcamp.com/EmbeddedPlayer/album=${obj.id}/size=small/bgcol=000000/transparent=true/`
             }
             seamless
             frameBorder="0"
@@ -62,13 +62,11 @@ export default class Listen extends Component {
     return ids.map( (el,ind) => {
       return (
         <div className="row" key={ el.id }>
-          <div className="col s12 m6 soundPlayer">
+          <div className="col s10 offset-s1 m6 soundPlayer">
             { this.differentPlayers(el) }
           </div>
-          <div className="col s12 m6">
-            <p>
+          <div className="col s12 m6 soundDescription">
               { el.description }
-            </p>
           </div>
         </div>
         )

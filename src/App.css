@@ -184,9 +184,21 @@ nav, .nav-wrapper {
 /* SOUND PLAYER */
 
 .row .col.soundPlayer iframe {
-  max-height: 120px;
-  height: 120px;
+  max-height: 80px;
   width: 100%;
+}
+
+.row .col.soundDescription {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.row .col.read img {
+  width: 100%;
+}
+
+.row .col.read p {
+  text-align: justify;
 }
 
 /* MEDIA QUERIES */
@@ -206,6 +218,11 @@ nav, .nav-wrapper {
 
   .innerScroll {
     height: calc(100% - 64px);
+  }
+
+  .row .col.soundDescription {
+    font-size: 1.5rem;
+    text-align: left;
   }
 }
 

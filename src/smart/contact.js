@@ -4,9 +4,10 @@ export default class Contact extends Component {
   render() {
     return (
       <div className="row innerScroll">
-        <div className="col s12 m6 offset-m3">
+        <div className="col s12 m8 offset-m2 read">
+          <img alt="Philippe on guitar" className="responsive-img padded" src="img/phil10.jpg" />
           <p className="padded">
-Y’all come back now, hear George Bush does not care about black people git ‘er done. Apple pie Tippecanoe and Tyler too this is what we call the Muppet Show security council veto. Liberty Tom Cruise 40 acres and a mule John Wayne y’all these colors don’t run. Manifest destiny moonshine Marlboro Santorum mama grizzly ask not what your country can do for you, ask what you can do for your country. Trail of tears day that will live in infamy Fox Mulder the south will rise again. Tombstone piledriver United we stand Forrest Gump It's only half time Florida Man.
+              Please get in touch! I'm always interested to discuss potential collaborations, touring opportunities and recording projects. Drop me a line at <a href="mailto:hiphatchet@gmail.com">hiphatchet@gmail.com</a>.
           </p>
         </div>
       </div>

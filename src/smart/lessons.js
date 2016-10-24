@@ -4,9 +4,12 @@ export default class Contact extends Component {
   render() {
     return (
       <div className="row innerScroll">
-        <div className="col s12 m6 offset-m3">
+        <div className="col s12 m8 offset-m2 read">
+          <img alt="Philippe on guitar" className="responsive-img padded" src="img/phil4.jpg" />
           <p className="padded">
-Uncle Sam childhood diabetes George Bush does not care about black people. Live free or die hard roll that beautiful bean footage Budweiser Japanese internment. Mission accomplished love it or leave it Monsanto Florida Man Fox Mulder. Blonde haired, blue eyed Jesus hot dog It's only half time the south will rise again. Westboro Baptist Church unconstitutional Marlboro bleed red white and blue. Liberty apple pie Dwayne “The Rock” Johnson ask not what your country can do for you, ask what you can do for your country. Tombstone piledriver murrica day that will live in infamy American justice. Propane and propane accessories freedom fries Buddy Christ crippling obesity epidemic. Vast right-wing conspiracy git ‘er done Jerry Springer slavery Liberty Bell.
+            Philippe has been teaching for almost a decade, beginning as a TA for his college's electronic music class. Upon relocating to Portland, OR, he worked at Portland's School of Rock, teaching guitar, bass, keys, music theory, & Ableton Live.
+            <br/><br/>
+            Email <a href="mailto:hiphatchet@gmail.com">hiphatchet@gmail.com</a> for rates and more information
           </p>
         </div>
       </div>
