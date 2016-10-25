@@ -4,7 +4,7 @@ body {
   border: 0;
   box-sizing: border-box;
   background-color: #DDDDDD;
-  color: hsl(30, 70%, 90%);
+  color: #eee;
   font-weight: 200;
   overflow: hidden;
   height: 100vh;
@@ -16,6 +16,9 @@ nav, .nav-wrapper {
   box-shadow: none;
 }
 
+nav ul a, nav .brand-logo {
+  color: #eee;
+}
 .left.button-collapse {
   margin-left: 10px;
 }
@@ -49,37 +52,25 @@ nav, .nav-wrapper {
 
 .container .row.imageWrapper {
   position: relative;
+  overflow: hidden;
   margin: 0;
 }
 
-.container .row.imageRow{
+.container .row.imageRow {
   display: flex;
   flex-flow: row nowrap;
   width: 1200%;
   height: 100%;
-  margin-left: 0%;
+  margin: 0;
   position: relative;
   transition: margin-left 400ms linear;
 }
 
 .container .row.imageRow .look {
-  margin: 0 auto;
-  box-sizing: border-box;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  max-height: 100%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-}
-
-.container .row.imageRow .look img {
-  max-width: 100%;
-  height: 100%;
-  flex: 0;
-  display: block;
-  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .container .row.imageWrapper .controls {
@@ -101,7 +92,8 @@ nav, .nav-wrapper {
   transition: left 300ms linear, right 300ms linear;
 }
 
-.container .row .controls:hover, .social-container:hover {
+.container .row .controls:hover,
+.social-container:hover {
   filter: invert(1);
 }
 
@@ -123,8 +115,11 @@ nav, .nav-wrapper {
   position: relative;
   display: flex;
   flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   margin: 0;
+  padding: 0px 5px;
 }
 
 .videoGrid .gridItem {
@@ -135,17 +130,33 @@ nav, .nav-wrapper {
   box-sizing: border-box;
 }
 
-.videoGrid .gridItem span, .videoGrid .gridItem iframe {
-  height: 100%;
+.videoGrid .gridItem span,
+.container .row.imageRow .look {
+  height: 0;
+  padding: 0 0 56.25% 0;
   width: 100%;
   display: block;
   position: relative;
+  margin: auto;
 }
 
-.videoGrid .gridItem .placeholder {
-  width: 100%;
+.container .row.imageRow .look {
+  padding: 0 0 5.555% 0;
+}
+
+.videoGrid .gridItem iframe,
+.videoGrid .gridItem .placeholder,
+.container .row.imageRow .look img {
+  max-width: 100%;
+  max-height: 100%;
   height: 100%;
   display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .videoGrid .gridItem .x {
@@ -226,14 +237,6 @@ img {
 
   .videoGrid .gridItem {
     flex-basis: 50%;
-  }
-}
-
-@media only screen and (min-width: 650px) {
-  .container .row.imageRow .look img.portrait {
-    flex: 1;
-    height: 100%;
-    width: auto;
   }
 }
 

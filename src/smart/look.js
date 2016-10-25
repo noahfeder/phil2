@@ -16,14 +16,12 @@ class Look extends Component {
 
   images() {
     let arr = [];
-    let portrait = '';
     let imgOrNot = false;
     for (let i = 0; i < 12; i++) {
       imgOrNot = ( (i >= this.props.image.current - 1 && i <= this.props.image.current + 1) || this.props.image[`position${i}`]);
-      portrait = (i === 7 || i === 11) ? 'portrait' : '';
       arr.push(
         <div className="col s12 look" key={ i }>
-          <img src={ imgOrNot ? `img/phil${i}.jpg` : '' } alt={ `phil ${i}`} className={ portrait } />
+          <img src={ imgOrNot ? `img/phil${i}.jpg` : '' } alt={ `phil ${i}`} />
         </div>
         )
     }

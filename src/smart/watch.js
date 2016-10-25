@@ -56,12 +56,14 @@ class Watch extends Component {
           videoId={ videoId }
           opts={ { playerVars: {autoplay: 1} } }
         /> :
-        <img
-          className="placeholder"
-          src={ `http://img.youtube.com/vi/${videoId}/mqdefault.jpg` }
-          alt="placeholder"
-          onClick={ () => this.expand(index) }
-        />;
+        <span>
+          <img
+            className="placeholder"
+            src={ `http://img.youtube.com/vi/${videoId}/mqdefault.jpg` }
+            alt="placeholder"
+            onClick={ () => this.expand(index) }
+          />
+        </span>;
       let button = active ?
         <div onClick={ this.reset } className="x">
           <i className="small material-icons">highlight_off</i>
