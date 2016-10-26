@@ -212,9 +212,6 @@ nav ul a, nav .brand-logo {
 }
 
 
-img {
-  filter: saturate(0);
-}
 /* MEDIA QUERIES */
 
 @media only screen and (min-width: 601px) {
