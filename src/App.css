@@ -93,7 +93,9 @@ nav ul a, nav .brand-logo {
 }
 
 .container .row .controls:hover,
-.social-container:hover {
+.social-container:hover,
+.container .row .controls:active,
+.social-container:active {
   filter: invert(1);
 }
 
@@ -187,8 +189,9 @@ nav ul a, nav .brand-logo {
   transition: background 200ms;
 }
 
-.playButton:hover {
-  background-image:  url('./img/playred.png');
+.playButton:hover,
+.playButton:active {
+  background-image: url('./img/playred.png');
 }
 
 /* SOUND PLAYER */
