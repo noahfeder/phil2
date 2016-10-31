@@ -1,3 +1,5 @@
+/* BASE AND UTILITY CLASSES */
+
 body {
   margin: 0 auto;
   padding: 0;
@@ -11,14 +13,17 @@ body {
   width: 100vw;
 }
 
-nav, .nav-wrapper {
+nav,
+.nav-wrapper {
   background-color: transparent;
   box-shadow: none;
 }
 
-nav ul a, nav .brand-logo {
+nav ul a,
+nav .brand-logo {
   color: #eee;
 }
+
 .left.button-collapse {
   margin-left: 10px;
 }
@@ -48,75 +53,14 @@ nav ul a, nav .brand-logo {
   height: calc(100% - 56px);
 }
 
-/* WATCH CAROUSEL */
+/* WATCH AND LOOK GRIDS */
 
-.container .row.imageWrapper {
-  position: relative;
-  overflow: hidden;
-  margin: 0;
-}
-
-.container .row.imageRow {
-  display: flex;
-  flex-flow: row nowrap;
-  width: 1200%;
-  height: 100%;
-  margin: 0;
-  position: relative;
-  transition: margin-left 400ms linear;
-}
-
-.container .row.imageRow .look {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.container .row.imageWrapper .controls {
-  height: 100%;
-  margin-top: 0px;
-}
-
-.container .row .controls {
-  position: absolute;
-  top: 0;
-  width: 80px;
-  height: calc( 75% - 60px );
-  margin-top: 30px;
-  background-position: center center;
-  background-size: 60px 60px;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  z-index: 69;
-  transition: left 300ms linear, right 300ms linear;
-}
-
-.container .row .controls:hover,
-.social-container:hover,
-.container .row .controls:active,
-.social-container:active {
-  filter: invert(1);
-}
-
-.container .row .controls.leftArrow {
-  left: 0;
-  background-image: url('./img/arrow_left.png');
-}
-
-.container .row .controls.rightArrow {
-  right: 0;
-  background-image: url('./img/arrow_right.png');
-}
-
-/* END WATCH CAROUSEL */
-
-/* GRID STUFF */
-
-.videoGrid {
+.videoGrid,
+.imageRow {
   position: relative;
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -124,16 +68,38 @@ nav ul a, nav .brand-logo {
   padding: 0px 5px;
 }
 
-.videoGrid .gridItem {
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+
+.imageRow {
+  flex-wrap: nowrap;
+  width: 1200%;
+  height: 100%;
+  padding: 0px;
+  transition: margin-left 400ms linear;
+}
+
+.gridItem {
   position: relative;
   padding: 0px 5px 10px 5px;
   height: auto;
-  flex: 1 0 100%;
+  flex: 1;
   box-sizing: border-box;
+  margin: auto;
 }
 
-.videoGrid .gridItem span,
-.container .row.imageRow .look {
+.videoGrid .gridItem {
+  flex-basis: 100%;
+}
+
+.imageRow .gridItem {
+  padding: 0;
+}
+
+.gridItem span {
   height: 0;
   padding: 0 0 56.25% 0;
   width: 100%;
@@ -142,13 +108,12 @@ nav ul a, nav .brand-logo {
   margin: auto;
 }
 
-.container .row.imageRow .look {
-  padding: 0 0 5.555% 0;
+.imageRow .gridItem span {
+  padding: 0 0 66.666% 0;
 }
 
-.videoGrid .gridItem iframe,
-.videoGrid .gridItem .placeholder,
-.container .row.imageRow .look img {
+.gridItem iframe,
+.gridItem .placeholder {
   max-width: 100%;
   max-height: 100%;
   height: 100%;
@@ -193,6 +158,43 @@ nav ul a, nav .brand-logo {
 .playButton:active {
   background-image: url('./img/playred.png');
 }
+
+/* END WATCH AND LOOK GRIDS */
+
+/* WATCH CONTROLS */
+
+.controls {
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  margin-top: 0px;
+  background-position: center center;
+  background-size: 60px 60px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 69;
+  transition: left 300ms linear, right 300ms linear;
+}
+
+.controls:hover,
+.social-container:hover,
+.controls:active,
+.social-container:active {
+  filter: invert(1);
+}
+
+.controls.leftArrow {
+  left: 0;
+  background-image: url('./img/arrow_left.png');
+}
+
+.controls.rightArrow {
+  right: 0;
+  background-image: url('./img/arrow_right.png');
+}
+
+/* END WATCH CONTROLS */
 
 /* SOUND PLAYER */
 

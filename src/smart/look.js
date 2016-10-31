@@ -29,8 +29,10 @@ class Look extends Component {
         ||
         this.props.image[`position${i}`]);
       arr.push(
-        <div className="col s12 look" key={ i }>
-          <img src={ imgOrNot ? `img/phil${i}.jpg` : '' } alt={ `phil ${i}`} />
+        <div className="gridItem" key={ i }>
+          <span>
+            <img className="placeholder" src={ imgOrNot ? `img/phil${i}.jpg` : '' } alt={ `phil ${i}`} />
+          </span>
         </div>
         )
     }
@@ -40,13 +42,13 @@ class Look extends Component {
     let leftClass = this.props.image.current === 0 ? 'hide' : '';
     let rightClass = this.props.image.current === 11 ? 'hide' : '';
     return (
-      <div className="row imageWrapper innerScroll">
+      <div className="imageWrapper innerScroll">
         <Swipeable
           onSwipedRight={ () => this.goLeft(this.props.image.current) }
           onSwipedLeft={ () => this.goRight(this.props.image.current) }
-          className="row imageRow"
+          className="imageRow"
           style={ {
-            marginLeft: `${this.props.image.current * -100}%`
+            marginLeft: `${this.props.image.current * -100}%`,
           } }>
           {this.images()}
         </Swipeable>
