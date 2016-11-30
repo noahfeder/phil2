@@ -48,7 +48,6 @@ export default class Listen extends Component {
       { id: '248449820', description: 'Producer', type: 'soundcloud' },
       { id: '1762490030', description: 'Producer, Engineer, Guitar', type: 'bandcamp' },
       { id: '4HEQVUiWUEso99vH4jDChk', description: 'Keyboards', type: 'spotify' },
-      { id: '1547477381', description: 'Piano', type: 'bandcamp' },
       { id: '238854917', description: 'Keyboards', type: 'soundcloud' },
       { id: '5jNykolgh8kaC2yqyzVM0E', description: 'Saxophone, Bass', type: 'spotify' },
       { id: '155015181', description: 'Piano', type: 'soundcloud' },
