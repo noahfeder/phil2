@@ -11,10 +11,11 @@ const youtubeUrls = [
   'h_iCJ_HBF9M',
   'UWg-YoBv-do',
   'tS6yCTIaIyw',
+  'hfrH6vJgmis',
   'PplH_ogfrZU',
   'TFKyEyoCL54',
   '0hdV1ITazOY',
-  '2Z5MJpw4gvE'
+  '2Z5MJpw4gvE',
 ];
 
 export const VIDEOS_MAX = youtubeUrls.length;
