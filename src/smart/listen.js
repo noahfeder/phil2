@@ -55,7 +55,8 @@ export default class Listen extends Component {
       { id: '154963835', description: 'Piano', type: 'soundcloud' },
       { id: '187185499', description: 'Guitar, Vocals, Producer', type: 'soundcloud' },
       { id: '187185511', description: 'Guitar, Vocals, Producer', type: 'soundcloud' },
-      { id: '59398313', description: 'Piano', type: 'soundcloud' }
+      { id: '59398313', description: 'Piano', type: 'soundcloud' },
+      { id: '773647966', description: 'Pedal Steel', type: 'bandcamp' }
     ];
 
     return ids.map( (el,ind) => {

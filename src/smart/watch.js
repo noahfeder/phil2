@@ -16,6 +16,11 @@ const youtubeUrls = [
   'TFKyEyoCL54',
   '0hdV1ITazOY',
   '2Z5MJpw4gvE',
+  'Yrxcq2YstiM',
+  'R_aqiQrxFXo',
+  '73_3auXqg04',
+  'VZEJZHXCSpg',
+  'jcoTFFwLY68',
 ];
 
 export const VIDEOS_MAX = youtubeUrls.length;
