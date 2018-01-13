@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
 import { SocialIcon } from 'react-social-icons';
 
+import { socialLinks } from '../data';
+
 export default class Footer extends Component {
+
+  icons() {
+    return socialLinks.map( el => {
+      return <SocialIcon url={el} color="black" style={{width: 30, height: 30, margin: 8}} />
+    });
+  }
+
   render() {
-
-    var urls = [
-      'https://twitter.com/hiphatchet',
-      'https://www.instagram.com/hiphatchet',
-      'http://www.facebook.com/hiphatchet',
-      'https://www.youtube.com/user/Philbronch'
-    ];
-
     return (
       <div className="footer container">
-        <SocialIcon url={urls[0]} color="black" style={{width: 30, height: 30, margin: 8}} />
-        <SocialIcon url={urls[1]} color="black" style={{width: 30, height: 30, margin: 8}} />
-        <SocialIcon url={urls[2]} color="black" style={{width: 30, height: 30, margin: 8}} />
-        <SocialIcon url={urls[3]} color="black" style={{width: 30, height: 30, margin: 8}} />
+        { this.icons() }
       </div>
     )
   }

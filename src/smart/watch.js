@@ -1,29 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import YouTube from 'react-youtube';
 
 import store from '../index';
 import { reset, expand } from '../actions/index';
 
-import YouTube from 'react-youtube';
+import { watchData } from '../data';
 
-const youtubeUrls = [
-  'c_TEnlMRcCc',
-  'h_iCJ_HBF9M',
-  'UWg-YoBv-do',
-  'tS6yCTIaIyw',
-  'hfrH6vJgmis',
-  'PplH_ogfrZU',
-  'TFKyEyoCL54',
-  '0hdV1ITazOY',
-  '2Z5MJpw4gvE',
-  'Yrxcq2YstiM',
-  'R_aqiQrxFXo',
-  '73_3auXqg04',
-  'VZEJZHXCSpg',
-  'jcoTFFwLY68',
-];
-
-export const VIDEOS_MAX = youtubeUrls.length;
+export const VIDEOS_MAX = watchData.length;
 
 class Watch extends Component {
   componentWillMount() {
@@ -54,7 +38,7 @@ class Watch extends Component {
 
   videos() {
 
-    return youtubeUrls.map( (videoId, index) => {
+    return watchData.map( (videoId, index) => {
       let active = this.props.grid[`position${index}`];
       let videoOrPlaceholder = ( active ) ?
         <YouTube
